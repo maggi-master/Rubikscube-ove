@@ -1,10 +1,8 @@
-const timer = document.getElementById('stopwatch');
-
-var hr = 0;
+var hour = 0;
 var min = 0;
 var sec = 0;
-var ms = 0;
-var stoptime = true;
+var centisec = 0;
+var running = false
 
 document.addEventListener('keyup', (event) => {
     if (event.key == ' ') {
@@ -13,80 +11,52 @@ document.addEventListener('keyup', (event) => {
 });
 
 function startStop() {
-    if (stoptime == true) {
-        startTimer();
+    if (running == false) {
+        running = true;
+        start();
     } else {
-        stopTimer();
+        running = false;
+        stop();
     }
 }
 
-function startTimer() {
-    if (stoptime == true) {
-        stoptime = false;
-        timerCycle();
-    }
+function start() {
+	started = window.setInterval(clockRunning, 10);
+    running = true;
 }
 
-function stopTimer() {
-    if (stoptime == false) {
-        stoptime = true;
-    }
+function stop(){
+	window.clearInterval(started);
+    running = false;
 }
-  
-function resetTimer() {
-    timer.innerHTML = "00:00:00:00";
-    stoptime = true;
-    hr = 0;
-    sec = 0;
+
+function reset(){
+    stop();
+    document.getElementById("stopwatch").innerHTML = "00:00:00.00"
+    hour = 0;
     min = 0;
-    ms = 0;
+    sec = 0;
+    centisec = 0;
 }
 
-function timerCycle() {
-    if (stoptime == false) {
-        ms = parseInt(ms)
-        sec = parseInt(sec);
-        min = parseInt(min);
-        hr = parseInt(hr);
+function clockRunning(){
+    centisec++;
+    if (centisec == 100){
+        sec += 1;
+        centisec = 0;
 
-        ms = ms + 1;
-        
-        if (ms == 100) {
-            sec = sec + 1;
-            ms = 0;
-        }
-
-        if (sec == 60) {
-            min = min + 1;
+        if (sec == 60){
+            min += 1;
             sec = 0;
-            ms = 0;
+
+            if (min == 60){
+                hour += 1;
+                min = 0;
+            }
         }
-
-        if (min == 60) {
-            hr = hr + 1;
-            min = 0;
-            sec = 0;
-            ms = 0;
-        }
-
-        if (ms < 10 || ms == 0) {
-            ms = '0' + ms;
-        }
-
-        if (sec < 10 || sec == 0) {
-            sec = '0' + sec;
-        }
-
-        if (min < 10 || min == 0) {
-            min = '0' + min;
-        }
-
-        if (hr < 10 || hr == 0) {
-            hr = '0' + hr;
-        }
-
-        timer.innerHTML = hr + ':' + min + ':' + sec + ':' + ms;
-
-        setTimeout("timerCycle()", 10);
-  }
-}
+    }
+	
+	document.getElementById("stopwatch").innerHTML = (hour ? (hour > 9 ? hour : "0" + hour) : "00") 
+	+ ":" + (min ? (min > 9 ? min : "0" + min) : "00") + ":" + (sec > 9 ? sec : "0" 
+		+ sec) + "." + (centisec ? (centisec > 9 ? centisec : "0" + centisec) : "00");
+};

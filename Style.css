@@ -1,0 +1,141 @@
+body {
+    background: rgba(206, 162, 162, 0.616);
+}
+
+#copyright {
+    text-align: center;
+    color: gray
+}
+
+#essentials {
+    text-align: center;
+    font-size: 20px;
+}
+
+#Title {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 50px
+}
+
+#about{
+    font-size: 25px;
+    text-align: center;
+}
+
+#paragraf p {
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: left;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#paragraf h3{
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: left;
+    font-size: 50px;
+}
+
+#scramble-exeplained {
+    font-size: 25px;
+    padding-block: 10px;
+}
+
+#scramble {
+    font-size: 25px;
+    padding-block: 10px;
+}
+
+#scramble-placment {
+    padding-top: 20px;
+    text-align: center;
+}
+
+#scramble-button {
+    padding-block: 10px;
+}
+
+#buttons-stopwatch {
+    width: 150px;
+    height: 45px;
+    border: 3px soldi white;
+    border-radius: 50px;
+    background: #202020;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+#stopwatch {
+    text-align: center;
+    font-size: 100px;
+}
+
+#buttons li {
+    display: inline;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#buttons {
+    text-align: center;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+  
+.navigation li {
+    float: left;
+}
+  
+.navigation li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+.navigation li a:hover, .dropdown:hover .dropbtn {
+    background-color: #111;
+}
+
+.navigation li.dropdown {
+    display: inline-block;
+}
+  
+.navigation .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.navigation .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.navigation .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.navigation .dropdown:hover .dropdown-content {
+    display: block;
+}

@@ -1,0 +1,13 @@
+document.write("<ul class=\"navigation\">");
+document.write("            <li><a class=\"active\" href=\"index.html\">Home<\/a><\/li>");
+document.write("            <li><a href=\"about_me.html\">About<\/a><\/li>");
+document.write("            <li><a href=\"rubikscube.html\">Rubikscube<\/a><\/li>");
+document.write("            <li class=\"dropdown\">");
+document.write("                <a href=\"javascript:void(0)\" class=\"dropbtn\">Articles<\/a>");
+document.write("                <div class=\"dropdown-content\">");
+document.write("                    <a href=\"shutdown_computer.html\">How to shutdown a computer<\/a>");
+document.write("                    <a href=\"#\">Why to wote obama<\/a>");
+document.write("                    <a href=\"rage.html\">How to rage<\/a>");
+document.write("                <\/div>");
+document.write("            <\/li>");
+document.write("        <\/ul>");
